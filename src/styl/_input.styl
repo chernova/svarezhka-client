@@ -1,0 +1,81 @@
+.input
+  display block
+  position relative
+  max-width 340px
+  margin 1rem 0 
+
+  input[type="text"], 
+  input[type="email"], 
+  input[type="password"]
+    background-color $grey-0
+    border 1px solid $grey-3
+    border-radius $border-radius
+    padding .5rem 1.5rem .5rem 1rem
+    width 100%
+    transition all .15s ease-in-out
+    
+    &:focus, &:active
+      box-shadow 0 0 5px rgba($inverse-color, 20%)
+      border-color $info-color
+      outline none
+
+    &::placeholder
+      color $grey-3
+
+  .la
+    position absolute
+    right .5rem
+    top 50%
+    font-size 25px
+    color $grey-4 
+    transform translateY(-50%)
+
+  input[type="checkbox"], input[type="radio"]
+    display inline-block
+    width auto
+
+.checkbox, .radio
+  position relative
+  display inline-block
+  &+&
+    margin-left 1rem
+  input[type="checkbox"], 
+  input[type="radio"]
+    position absolute
+    z-index -1
+    left 0
+    opacity 0
+  label
+    cursor pointer
+    &:before
+      background-color $grey-2
+      content ""
+      font-family "LineAwesome"
+      font-size .875rem
+      line-height 1.25
+      text-align center
+      width 1rem
+      height 1rem
+      display inline-block
+      vertical-align middle
+      margin-right .5rem
+      margin-top -2px
+      transition background .2s ease-in-out
+
+.checkbox
+  input[type="checkbox"]:checked + label:before
+    background-color $info-color
+    color $grey-0
+    content "\f17b"
+.radio
+  input[type="radio"]:checked + label:before
+    border 1px solid $info-color
+    color $info-color
+    content "●"
+  label:before
+    border-radius 50%
+    font-size 1.25rem
+    line-height 11px
+
+.field-group
+  margin 2rem 0

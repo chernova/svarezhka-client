@@ -1,0 +1,31 @@
+button(bg, color) 
+  background-color bg
+  color color
+  box-shadow 0 3px 0 darken(bg, 25%)
+  &:hover
+    background-color darken(bg, 10%)
+
+.button
+  border-radius $border-radius
+  padding .5rem 1.75rem
+  user-select none
+  border none
+  line-height 1.5
+  cursor pointer
+  button($default-color, $grey-0)
+  transition all .2s ease-in-out
+  &:focus, &:active
+    outline none
+
+  &.primary
+    button($primary-color, $grey-0)
+  &.info
+    button($info-color, $grey-0)
+  &.inverse
+    button($inverse-color, $grey-0)
+  &.success
+    button($success-color, $grey-0)
+  &.warning
+    button($warning-color, $grey-0)
+  &.danger
+    button($danger-color, $grey-0)
