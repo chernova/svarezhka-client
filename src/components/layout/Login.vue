@@ -2,7 +2,10 @@
 <div class="login">
     <h1>Войти в систему</h1>
     <p class="text-muted">Войдите в систему, используя ваши личные данные.</p>
-    <form @submit.prevent>
+    <div class="alert danger" v-if="errors.length > 0">
+        {{ errors[0] }}
+    </div>
+    <form @submit.prevent="onLogin">
         <div class="input">
             <input v-model="email" type="email" placeholder="Электронная почта" required>
             <i class="la la-at"></i> 
@@ -17,12 +20,32 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   data() {
     return {
-        email: '',
-        password: ''
+      email: "",
+      password: ""
     };
+  },
+  computed: {
+    ...mapGetters(["errors", "user"])
+  },
+  watch: {
+    user(value) {
+      if (value !== null && value !== undefined) {
+        this.$router.push("/");
+      }
+    }
+  },
+  methods: {
+    onLogin() {
+      this.$store.dispatch("login", {
+        email: this.email,
+        password: this.password
+      });
+    }
   }
 };
 </script>

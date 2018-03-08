@@ -28,7 +28,7 @@
               </li>
               <div class="divider"></div>
               <li>
-                <a href="#"><i class="la la-sign-out"></i> Выход</a>
+                <a @click="onLogout()"><i class="la la-sign-out"></i> Выход</a>
               </li>
             </ul>
           </div>
@@ -46,6 +46,12 @@ export default {
       photo: "",
       showMenu: false
     };
+  },
+  methods: {
+    onLogout() {
+      this.$store.dispatch('logout')
+      this.$router.push('/login')
+    }
   }
 };
 </script>
