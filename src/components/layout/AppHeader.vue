@@ -14,7 +14,7 @@
           </div>
           <div class="user" @click.stop="showMenu = !showMenu"> 
             <div class="avatar">
-              <img src="../assets/zoey.jpg" :alt="username">
+              <img src="/static/zoey.jpg" :alt="username">
             </div>
             <div class="menu-expander">
               <i class="la la-ellipsis-h"></i>
@@ -51,6 +51,6 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../styl/_variables';
-@import '../styl/_header';
+@import '../../styl/_variables';
+@import '../../styl/_header';
 </style>

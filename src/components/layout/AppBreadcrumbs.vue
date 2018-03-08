@@ -33,6 +33,6 @@ export default {
 </script>
 
 <style lang="styl">
-@import '../styl/_variables';
-@import '../styl/_breadcrumbs';
+@import '../../styl/_variables';
+@import '../../styl/_breadcrumbs';
 </style>

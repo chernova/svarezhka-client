@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Settings from '@/components/UserSettings'
-import Profile from '@/components/UserProfile'
-import Login from '@/components/Login'
+
+import Login from '@/components/layout/Login'
+import Main from '@/components/layout/Main'
+
+import SettingsView from '@/components/views/UserSettings'
+import ProfileView from '@/components/views/UserProfile'
 
 Vue.use(Router)
 
@@ -16,14 +19,20 @@ export default new Router({
             component: Login
         },
         {
-            path: '/settings',
-            component: Settings,
-            meta: {title: 'Настройки'}
-        },
-        {
-            path: '/profile',
-            component: Profile,
-            meta: {title: 'Профиль'}
+            path: '/',
+            component: Main,
+            children: [
+                {
+                    path: '/settings',
+                    component: SettingsView,
+                    meta: { title: 'Настройки' }
+                },
+                {
+                    path: '/profile',
+                    component: ProfileView,
+                    meta: { title: 'Профиль' }
+                }
+            ]
         }
     ]
 })
