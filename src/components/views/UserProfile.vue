@@ -2,15 +2,15 @@
 <div class="form">
     <div class="field-group">
         <div class="input">
-            <input type="email" placeholder="Фамилия">
+            <input type="text" name="last_name" placeholder="Фамилия">
             <i class="la la-edit"></i>
         </div>
         <div class="input">
-            <input type="password" placeholder="Имя">
+            <input type="text" name="first_name" placeholder="Имя">
             <i class="la la-edit"></i>
         </div>
         <div class="input">
-            <input type="password" placeholder="Отчество">
+            <input type="text" name="middle_name" placeholder="Отчество">
             <i class="la la-edit"></i>
         </div>
         <div class="input">

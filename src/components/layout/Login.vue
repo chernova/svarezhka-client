@@ -1,7 +1,7 @@
 <template>
 <div class="login">
     <h1>Войти в систему</h1>
-    <p class="text-muted">Войдите в систему, используя ваши личные данные.</p>
+    <p class="text muted">Войдите в систему, используя ваши личные данные.</p>
     <div class="alert danger" v-if="errors.length > 0">
         {{ errors[0] }}
     </div>
@@ -14,7 +14,12 @@
             <input v-model="password" type="password" placeholder="Пароль" required minlength="6">
             <i class="la la-lock"></i> 
         </div>
-        <button type="submit" class="button info block">Войти</button>
+        <div class="input">
+          <button type="submit" class="button primary block">Войти</button>
+        </div>
+        <div class="text center">
+          <a href="#">Забыли пароль?</a>
+        </div>
     </form>
 </div>
 </template>

@@ -8,14 +8,15 @@
   input[type="email"], 
   input[type="password"]
     background-color $grey-0
-    border 1px solid $grey-3
+    border 1px solid $grey-2
     border-radius $border-radius
     padding .5rem 1.5rem .5rem 1rem
     width 100%
     transition all .15s ease-in-out
+    outline none
     
     &:focus, &:active
-      box-shadow 0 0 5px rgba($inverse-color, 20%)
+      box-shadow 0 0 5px $box-shadow
       border-color $info-color
       outline none
 

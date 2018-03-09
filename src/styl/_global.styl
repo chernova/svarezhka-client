@@ -21,9 +21,15 @@ body, input, select, button
 strong, b
   font-weight bold
 
-a, a:active, a:visited
-  color inherit
+a
+  color $primary-color
   text-decoration none
+  transition color .2s ease-in-out
+  &:hover
+    color darken($primary-color, 25%)
+
+p
+  margin-bottom 1rem
 
 h1, h2, h3, h4, h5, h6
   font-family inherit
