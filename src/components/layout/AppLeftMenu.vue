@@ -19,6 +19,6 @@ export default {
 </script>
 
 <style lang="styl">
-@import '../../styl/_variables';
-@import '../../styl/_left-menu';
+@import "../../styl/_variables";
+@import "../../styl/_left-menu";
 </style>

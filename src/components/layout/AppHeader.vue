@@ -49,8 +49,8 @@ export default {
   },
   methods: {
     onLogout() {
-      this.$store.dispatch('logout')
-      this.$router.push('/login')
+      this.$store.dispatch("logout");
+      this.$router.push("/login");
     }
   }
 };

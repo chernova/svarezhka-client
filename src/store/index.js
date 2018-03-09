@@ -1,4 +1,4 @@
-import Vue  from 'vue'
+import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
@@ -9,10 +9,10 @@ export const store = new Vuex.Store({
         errors: []
     },
     getters: {
-        errors (state) {
+        errors(state) {
             return state.errors
         },
-        user (state) {
+        user(state) {
             return state.user
         }
     },
@@ -28,7 +28,7 @@ export const store = new Vuex.Store({
         }
     },
     actions: {
-        login({commit}, payload) {
+        login({ commit }, payload) {
             commit('clearErrors')
             if (payload.email === 'ethan-mars@hotmail.com' && payload.password === 'universal') {
                 const newUser = {
@@ -40,7 +40,7 @@ export const store = new Vuex.Store({
                 commit('addError', 'Такой пользователь не найден.')
             }
         },
-        logout({commit}) {
+        logout({ commit }) {
             commit('setUser', null)
         }
     }
