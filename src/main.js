@@ -11,5 +11,14 @@ new Vue({
   el: '#app',
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  created() {
+    if (window.localStorage) {
+      let localUserString = window.localStorage.getItem("user") || "null"
+      let localUser = JSON.parse(localUserString)
+      if (localUser && this.$store.getters.user !== localUser) {
+        this.$store.dispatch("autoLogin", localUser)
+      }
+    }
+  }
 })

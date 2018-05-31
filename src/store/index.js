@@ -36,12 +36,19 @@ export const store = new Vuex.Store({
                     email: payload.email
                 }
                 commit('setUser', newUser)
+                if (window.localStorage) {
+                    window.localStorage.setItem('user', JSON.stringify(newUser))
+                }
             } else {
                 commit('addError', 'Такой пользователь не найден.')
             }
         },
+        autoLogin({ commit }, payload) {
+            commit('setUser', { uid: payload.uid, email: payload.email })
+        },
         logout({ commit }) {
             commit('setUser', null)
+            window.localStorage.removeItem('user')
         }
     }
 })
